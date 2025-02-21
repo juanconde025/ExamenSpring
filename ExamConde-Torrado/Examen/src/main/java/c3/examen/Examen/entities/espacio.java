@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class espacio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private int id;
 
     private String nombre;
     private String tipo;
@@ -25,7 +25,7 @@ public class espacio {
     public espacio() {
     }
 
-    public espacio(String id, String nombre, String tipo, int capacidad_maxima, String disponibilidad, admin id_Admin) {
+    public espacio(int id, String nombre, String tipo, int capacidad_maxima, String disponibilidad, admin id_Admin) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -34,12 +34,12 @@ public class espacio {
         this.id_Admin = id_Admin;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(int id) {
+        this.id = id;   
     }
 
     public String getNombre() {
