@@ -8,7 +8,7 @@ document.getElementById("formularioEspacios").addEventListener("submit", async (
         disponibilidad:document.getElementById("disponibilidad").value
     }
 
-    const response = await fetch('http://localhost:8080/api/espacios', {
+    const response = await fetch('http://localhost:8080/api/espacios/post', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
