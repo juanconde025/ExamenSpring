@@ -57,7 +57,7 @@ CREATE TABLE public.espacio (
 	capacidad_maxima int4 NOT NULL,
 	disponibilidad varchar NULL,
 	CONSTRAINT espacio_pk PRIMARY KEY (id),
-	CONSTRAINT espacio_admin_fk FOREIGN KEY (id) REFERENCES public."admin"(id)
+	CONSTRAINT espacio_admin_fk FOREIGN KEY (id) REFERENCES public.admin(id)
 );
 
 -- public.reserva definition
