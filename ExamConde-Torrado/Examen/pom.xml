@@ -8,10 +8,10 @@
 		<version>3.4.2</version>
 		<relativePath/>
 	</parent>
-	<groupId>com.c3</groupId>
-	<artifactId>ExamConde-Torrado</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>ExamConde-Torrado</name>
+	<groupId>c3.examen</groupId>
+	<artifactId>Examen</artifactId>
+	<name>Examen</name>
+	<description>Examen</description>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
