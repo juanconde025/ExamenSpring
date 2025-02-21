@@ -11,7 +11,6 @@
 	<groupId>c3.examen</groupId>
 	<artifactId>Examen</artifactId>
 	<name>Examen</name>
-	<description>Examen</description>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
