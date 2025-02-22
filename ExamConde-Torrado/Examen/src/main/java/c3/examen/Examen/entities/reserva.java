@@ -21,18 +21,18 @@ public class reserva {
     private cliente id_Cliente;
     @OneToOne
     @JoinColumn(name = "id_Espacio", nullable = false)
-    private espacio idEspacio;
+    private espacio id_Espacio;
     @OneToOne
     @JoinColumn(name = "id_ReservaFecha", nullable = false)
-    private reservafecha idReservafecha;
+    private reservafecha id_ReservaFecha;
     public reserva() {
     }
-    public reserva(int id, String estado, cliente id_Cliente, espacio idEspacio, reservafecha idReservafecha) {
+    public reserva(int id, String estado, cliente id_Cliente, espacio id_Espacio, reservafecha id_ReservaFecha) {
         this.id = id;
         this.estado = estado;
         this.id_Cliente = id_Cliente;
-        this.idEspacio = idEspacio;
-        this.idReservafecha = idReservafecha;
+        this.id_Espacio = id_Espacio;
+        this.id_ReservaFecha = id_ReservaFecha;
     }
     public int getId() {
         return id;
@@ -53,16 +53,16 @@ public class reserva {
         this.id_Cliente = id_Cliente;
     }
     public espacio getIdEspacio() {
-        return idEspacio;
+        return id_Espacio;
     }
-    public void setIdEspacio(espacio idEspacio) {
-        this.idEspacio = idEspacio;
+    public void setIdEspacio(espacio id_Espacio) {
+        this.id_Espacio = id_Espacio;
     }
     public reservafecha getIdReservafecha() {
-        return idReservafecha;
+        return id_ReservaFecha;
     }
-    public void setIdReservafecha(reservafecha idReservafecha) {
-        this.idReservafecha = idReservafecha;
+    public void setIdReservafecha(reservafecha id_ReservaFecha) {
+        this.id_ReservaFecha = id_ReservaFecha;
     }
     
 }

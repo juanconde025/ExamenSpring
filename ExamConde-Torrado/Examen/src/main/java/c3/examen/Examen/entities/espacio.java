@@ -19,7 +19,7 @@ public class espacio {
     private String disponibilidad;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "id_Admin", nullable = false)
     private admin id_Admin;
 
     public espacio() {
