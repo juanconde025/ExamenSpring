@@ -37,6 +37,8 @@ Exam of SpringBoot that is a management system of coworking in areas about space
 ```bash
 git clone https://github.com/juanconde025/ExamenSpring
 cd ExamenSpring
+cd ExamConde-Torrado
+cd Examen
 ```
 
 ### **2️⃣ Setup PostgreSQL Database**
@@ -65,7 +67,7 @@ API will be available at `http://localhost:8081`.
 | POST   | `/api/auth/login` | Login and obtain JWT |
 
 
-Full API documentation is available in **Swagger** at `http://localhost:8080/swagger-ui.html/`.
+Full API documentation is available in **Swagger** at `http://localhost:8081/swagger-ui.html/`.
 
 ---
 
