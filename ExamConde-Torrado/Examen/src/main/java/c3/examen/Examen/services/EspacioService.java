@@ -3,7 +3,6 @@ package c3.examen.Examen.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import c3.examen.Examen.entities.espacio;
@@ -11,9 +10,9 @@ import c3.examen.Examen.repositories.EspacioRepository;
 
 @Service
 public class EspacioService {
-    private EspacioRepository espacioRepository;
+    private final EspacioRepository espacioRepository;
 
-    public EspacioService() {
+    public EspacioService(EspacioRepository espacioRepository) {
         this.espacioRepository = espacioRepository;
     }
 
@@ -21,23 +20,23 @@ public class EspacioService {
         return espacioRepository.findAll();
     }
 
-    public List<espacio> getUserByName(String nombre) {
-        return espacioRepository.findByNombre(nombre);
+    public Optional<espacio> getUserById(int id) {
+        return espacioRepository.findById(id);
     }
 
+    public espacio updateEspacio(int id, String nombre, String tipo, int capacidad_maxima, String disponibilidad){
+        Optional<espacio> optionalEspacio = espacioRepository.findById(id);
+        espacio Space = optionalEspacio.get();
+        Space.setNombre(nombre);
+        Space.setTipo(tipo);
+        Space.setCapacidad_maxima(capacidad_maxima);
+        Space.setDisponibilidad(disponibilidad);
 
-    public espacio updateEspacio(String nombre, espacio updatedEspacio) {
-        return espacioRepository.findByNombre(nombre).map(espace -> {
-            espace.setNombre(updatedEspacio.getNombre());
-            espace.setTipo(updatedEspacio.getTipo());
-            espace.setCapacidad_maxima(updatedEspacio.getCapacidad_maxima());
-            espace.setDisponibilidad(updatedEspacio.getDisponibilidad());
-
-            return userRepository.save(user);
-        }).orElseThrow(() -> new RuntimeException("Espacio with name " + nombre + " not exist"));
+        return espacioRepository.save(Space); 
     }
+   
 
-    public void deleteEspacio(String nombre) {
-        return espacioRepository.deleOptional();
+    public void deleteEspacio(Integer id) {
+        espacioRepository.deleteById(id);
     }
 }
