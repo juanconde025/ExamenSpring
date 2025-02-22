@@ -1,6 +1,7 @@
 package c3.examen.Examen.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,38 +21,23 @@ public class EspacioService {
         return espacioRepository.findAll();
     }
 
-    public Optional<User> getUserById(Integer id) {
-        return userRepository.findById(id);
+    public List<espacio> getUserByName(String nombre) {
+        return espacioRepository.findByNombre(nombre);
     }
 
-    public Optional<User> getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
-    }
 
-    public Optional<User> getUserByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
-
-    public User updateUser(Integer id, User updatedUser) {
-        return userRepository.findById(id).map(user -> {
-            user.setName(updatedUser.getName());
-            user.setLastname(updatedUser.getLastname());
-            user.setEmail(updatedUser.getEmail());
-            user.setUsername(updatedUser.getUsername());
-            user.setPhone(updatedUser.getPhone());
-            user.setAge(updatedUser.getAge());
-            user.setBio(updatedUser.getBio());
-            user.setPhoto(updatedUser.getPhoto());
-
-            if (updatedUser.getPassword() != null && !updatedUser.getPassword().isEmpty()) {
-                user.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
-            }
+    public espacio updateEspacio(String nombre, espacio updatedEspacio) {
+        return espacioRepository.findByNombre(nombre).map(espace -> {
+            espace.setNombre(updatedEspacio.getNombre());
+            espace.setTipo(updatedEspacio.getTipo());
+            espace.setCapacidad_maxima(updatedEspacio.getCapacidad_maxima());
+            espace.setDisponibilidad(updatedEspacio.getDisponibilidad());
 
             return userRepository.save(user);
-        }).orElseThrow(() -> new RuntimeException("User with ID " + id + " not exist"));
+        }).orElseThrow(() -> new RuntimeException("Espacio with name " + nombre + " not exist"));
     }
 
-    public void deleteUser(Integer id) {
-        userRepository.deleteById(id);
+    public void deleteEspacio(String nombre) {
+        return espacioRepository.deleOptional();
     }
 }

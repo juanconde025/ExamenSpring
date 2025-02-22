@@ -11,6 +11,10 @@
         <h1 class="text-center" id="Titulo">Gestion de Espacios</h1>
         <form id="formularioEspacios" class="formularioEspacios mb-4">
             <div class="mt-3">
+                <label for="nuip" class="form-label">Id</label>
+                <input type="number" class="form-control" id="id" required>
+            </div>
+            <div class="mt-3">
                 <label for="nuip" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" required>
             </div>
@@ -35,7 +39,7 @@
 
         <div>
             <h3>Buscar Espacio por ID</h3>
-            <input type="number" id="buscarNombre" class="form-control mb-2" placeholder="Ingrese el nombre del espacio">
+            <input type="number" id="buscarId" class="form-control mb-2" placeholder="Ingrese el ID del espacio">
             <button id="buscarEspacio" class="btn btn-info">Buscar Espacio</button>
         </div>
 
