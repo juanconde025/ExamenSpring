@@ -98,3 +98,14 @@ insert into reservafecha (year, mes, dia, hora_inicio,hora_final) values
 (2023,02,04,'17:00:00','19:00:00');
 
 
+insert into reserva (estado, id_cliente,id_espacio,id_reservafecha) values
+('Pendiente',1,1,1),
+('Confirmada',2,2,2),
+('Cancelada',3,3,3),
+('Pendiente',4,4,4),
+('Confirmada',5,5,5),
+('Cancelada',6,6,6),
+('Confirmada',7,7,7),
+('Cancelada',8,8,8),
+('Pendiente',9,9,9),
+('Cancelada',10,10,10);
