@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import c3.examen.Examen.entities.espacio;
-import java.util.List;
 
 
 @Repository
