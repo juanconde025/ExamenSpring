@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "admin")
-public class admin {
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -17,13 +17,16 @@ public class admin {
     private String Apellidos;
 
     
-    public admin() {
+    
+    public Admin() {
     }
-    public admin(int id, String nombres, String apellidos) {
+    
+    public Admin(int id, String nombres, String apellidos) {
         this.id = id;
         Nombres = nombres;
         Apellidos = apellidos;
     }
+
     public int getId() {
         return id;
     }

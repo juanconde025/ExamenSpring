@@ -2,7 +2,8 @@ package c3.examen.Examen.services;
 
 import java.util.List;
 
-import c3.examen.Examen.entities.reserva;
+import c3.examen.Examen.entities.Reserva;
+
 import c3.examen.Examen.repositories.ReservaRepository;
 
 public class ReservaService {
@@ -12,7 +13,7 @@ public class ReservaService {
         this.reservaRepository = reservaRepository;
     }
     
-    public List<reserva> getAllReservas(){
+    public List<Reserva> getAllReservas(){
         return reservaRepository.findAll();
     }
     

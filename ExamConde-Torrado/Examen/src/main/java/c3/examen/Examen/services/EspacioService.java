@@ -5,7 +5,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import c3.examen.Examen.entities.espacio;
+import c3.examen.Examen.entities.Espacio;
+
 import c3.examen.Examen.repositories.EspacioRepository;
 
 @Service
@@ -17,17 +18,17 @@ public class EspacioService {
     }
 
 
-    public List<espacio> getAllEspacios() {
+    public List<Espacio> getAllEspacios() {
         return espacioRepository.findAll();
     }
 
-    public Optional<espacio> getUserById(int id) {
+    public Optional<Espacio> getUserById(int id) {
         return espacioRepository.findById(id);
     }
 
-    public espacio updateEspacio(int id, String nombre, String tipo, int capacidad_maxima, String disponibilidad){
-        Optional<espacio> optionalEspacio = espacioRepository.findById(id);
-        espacio Space = optionalEspacio.get();
+    public Espacio updateEspacio(int id, String nombre, String tipo, int capacidad_maxima, String disponibilidad){
+        Optional<Espacio> optionalEspacio = espacioRepository.findById(id);
+        Espacio Space = optionalEspacio.get();
         Space.setNombre(nombre);
         Space.setTipo(tipo);
         Space.setCapacidad_maxima(capacidad_maxima);

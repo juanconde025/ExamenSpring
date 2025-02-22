@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "clientes")
-public class cliente {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -17,9 +17,11 @@ public class cliente {
     private int dni;
     private String telefono;
     private String email;
-    public cliente() {
+    
+    public Cliente() {
     }
-    public cliente(int id, String nombres, String apellidos, int dni, String telefono, String email) {
+    
+    public Cliente(int id, String nombres, String apellidos, int dni, String telefono, String email) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -27,6 +29,7 @@ public class cliente {
         this.telefono = telefono;
         this.email = email;
     }
+
     public int getId() {
         return id;
     }

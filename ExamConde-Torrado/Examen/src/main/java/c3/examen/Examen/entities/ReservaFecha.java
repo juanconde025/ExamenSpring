@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "reservafecha")
-public class reservafecha {
+public class ReservaFecha {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,9 +20,11 @@ public class reservafecha {
     private int dia;
     private Time hora_inicio;
     private Time hora_final;
-    public reservafecha() {
+   
+    public ReservaFecha() {
     }
-    public reservafecha(int id, int año, int mes, int dia, Time hora_inicio, Time hora_final) {
+    
+    public ReservaFecha(int id, int año, int mes, int dia, Time hora_inicio, Time hora_final) {
         this.id = id;
         this.año = año;
         this.mes = mes;
@@ -30,6 +32,7 @@ public class reservafecha {
         this.hora_inicio = hora_inicio;
         this.hora_final = hora_final;
     }
+
     public int getId() {
         return id;
     }

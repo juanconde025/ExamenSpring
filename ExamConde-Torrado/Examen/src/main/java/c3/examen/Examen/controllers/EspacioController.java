@@ -1,9 +1,12 @@
 package c3.examen.Examen.controllers;
 
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import c3.examen.Examen.entities.espacio;
+import c3.examen.Examen.entities.Espacio;
+
 import c3.examen.Examen.repositories.EspacioRepository;
 
 
@@ -21,22 +24,22 @@ public class EspacioController {
     }
 
     @PostMapping("/post")
-    public espacio addEspacio(@RequestBody espacio space) {
+    public Espacio addEspacio(@RequestBody Espacio space) {
         return espacioRepository.save(space);
     }
 
     @GetMapping("/{id}")
-    public espacio getEspacio(@PathVariable int id) {
+    public Espacio getEspacio(@PathVariable int id) {
         return espacioRepository.findById(id).orElse(null);
     }
 
     @GetMapping
-    public List<espacio> getAllEspacios() {
-        return (List<espacio>) espacioRepository.findAll();
+    public List<Espacio> getAllEspacios() {
+        return (List<Espacio>) espacioRepository.findAll();
     }
 
     @PutMapping("/{id}")
-    public espacio updateeEspacio(@PathVariable int id, @RequestBody espacio space) {
+    public Espacio updateeEspacio(@PathVariable int id, @RequestBody Espacio space) {
         return espacioRepository.findById(id).map(e ->{
             e.setNombre(space.getNombre());
             e.setTipo(space.getTipo());
@@ -46,9 +49,15 @@ public class EspacioController {
         }).orElse(null);
     }
 
+    
     @DeleteMapping("/{id}")
-    public void deleteEspacio(@PathVariable int id) {
-        espacioRepository.deleteById(id);
+    public ResponseEntity<String> deleteEspacio(@PathVariable int id) {
+        if (espacioRepository.existsById(id)) {
+            espacioRepository.deleteById(id);
+            return ResponseEntity.ok("Espacio eliminado correctamente.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Espacio no encontrado.");
+        }
     }
 
 }

@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "reserva")
-public class reserva {
+public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,52 +19,67 @@ public class reserva {
     private String estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_Cliente", nullable = false)
-    private cliente id_Cliente;
+@JoinColumn(name = "id_Cliente", nullable = false)
+private Cliente cliente;
+
     @OneToOne
     @JoinColumn(name = "id_Espacio", nullable = false)
-    private espacio id_Espacio;
+    private Espacio espacio;
     @OneToOne
     @JoinColumn(name = "id_ReservaFecha", nullable = false)
-    private reservafecha id_ReservaFecha;
-    public reserva() {
+    private ReservaFecha reservaFecha;
+    
+    public Reserva() {
     }
-    public reserva(int id, String estado, cliente id_Cliente, espacio id_Espacio, reservafecha id_ReservaFecha) {
+   
+    public Reserva(int id, String estado, Cliente cliente, Espacio espacio, ReservaFecha reservaFecha) {
         this.id = id;
         this.estado = estado;
-        this.id_Cliente = id_Cliente;
-        this.id_Espacio = id_Espacio;
-        this.id_ReservaFecha = id_ReservaFecha;
+        this.cliente = cliente;
+        this.espacio = espacio;
+        this.reservaFecha = reservaFecha;
     }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getEstado() {
         return estado;
     }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    public cliente getId_Cliente() {
-        return id_Cliente;
+
+    public Cliente getCliente() {
+        return cliente;
     }
-    public void setId_Cliente(cliente id_Cliente) {
-        this.id_Cliente = id_Cliente;
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
-    public espacio getIdEspacio() {
-        return id_Espacio;
+
+    public Espacio getEspacio() {
+        return espacio;
     }
-    public void setIdEspacio(espacio id_Espacio) {
-        this.id_Espacio = id_Espacio;
+
+    public void setEspacio(Espacio espacio) {
+        this.espacio = espacio;
     }
-    public reservafecha getIdReservafecha() {
-        return id_ReservaFecha;
+
+    public ReservaFecha getReservaFecha() {
+        return reservaFecha;
     }
-    public void setIdReservafecha(reservafecha id_ReservaFecha) {
-        this.id_ReservaFecha = id_ReservaFecha;
+
+    public void setReservaFecha(ReservaFecha reservaFecha) {
+        this.reservaFecha = reservaFecha;
     }
+
+    
     
 }

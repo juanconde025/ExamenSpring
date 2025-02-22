@@ -109,3 +109,4 @@ insert into reserva (estado, id_cliente,id_espacio,id_reservafecha) values
 ('Cancelada',8,8,8),
 ('Pendiente',9,9,9),
 ('Cancelada',10,10,10);
+ALTER TABLE reserva ADD COLUMN id_reserva_fecha INTEGER DEFAULT 0 NOT NULL;
