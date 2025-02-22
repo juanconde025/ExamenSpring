@@ -83,5 +83,11 @@ public class espacio {
     public void setId_Admin(admin id_Admin) {
         this.id_Admin = id_Admin;
     }
+    @Override
+    public String toString() {
+        return "Espacio{" + "id=" + id + ", nombre='" + nombre + '\'' + ", tipo='" + tipo + '\'' +
+                ", capacidad maxima='" + capacidad_maxima + '\'' + ", disponibilidad=" + disponibilidad + ", Admin='" + id_Admin + '\'' + 
+                + '}';
+    }
     
 }

@@ -1,12 +1,14 @@
 package c3.examen.Examen.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 
 import c3.examen.Examen.entities.espacio;
 import c3.examen.Examen.repositories.EspacioRepository;
 
+
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/espacios")

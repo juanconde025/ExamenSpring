@@ -16,6 +16,7 @@ public class EspacioService {
         this.espacioRepository = espacioRepository;
     }
 
+
     public List<espacio> getAllEspacios() {
         return espacioRepository.findAll();
     }
