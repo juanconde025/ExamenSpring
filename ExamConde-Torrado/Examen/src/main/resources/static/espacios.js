@@ -9,7 +9,7 @@ document.getElementById("formularioEspacios").addEventListener("submit", async (
         disponibilidad:document.getElementById("disponibilidad").value
     }
 
-    const response = await fetch('http://localhost:8080/api/espacios/post', {
+    const response = await fetch('http://localhost:8081/api/espacios/post', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ document.getElementById("formularioEspacios").addEventListener("submit", async (
 document.getElementById("buscarEspacio").addEventListener("click", async () => {
     const id = document.getElementById("buscarId").value;
 
-    const response= await fetch(`http://localhost:8080/api/espacios/${id}`);
+    const response= await fetch(`http://localhost:8081/api/espacios/${id}`);
 
     if (response.ok) {
         const espacio = await response.json();
@@ -52,7 +52,7 @@ document.getElementById("buscarEspacio").addEventListener("click", async () => {
 
 async function eliminarEspacio(id){
     if (confirm('Esta seguro de eliminar el espacio?')) {
-        const response = await fetch(`http://localhost:8080/api/espacios/${id}`, {
+        const response = await fetch(`http://localhost:8081/api/espacios/${id}`, {
             method: 'DELETE',
         });
 
@@ -80,7 +80,7 @@ function editarEspacio(espacio) {
             disponibilidad: document.getElementById('disponibilidad').value
         };
 
-        const response = await fetch(`http://localhost:8080/api/espacios/${espacio.id}`, {
+        const response = await fetch(`http://localhost:8081/api/espacios/${espacio.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
